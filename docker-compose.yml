@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  # Service pour la base de données MySQL
+  
   db:
     image: mysql:5.7
     container_name: mysql-db
@@ -16,7 +16,7 @@ services:
     networks:
       - app-network
 
-  # Service pour PHPMyAdmin
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
@@ -31,7 +31,7 @@ services:
     networks:
       - app-network
 
-  # Service pour le backend Flask
+ 
   backend:
     build:
       context: ./backend
@@ -48,7 +48,7 @@ services:
     networks:
       - app-network
 
-  # Service pour le frontend React
+  
   frontend:
     build:
       context: ./frontend
@@ -59,7 +59,7 @@ services:
     networks:
       - app-network
 
-  # Service pour le reverse proxy Nginx
+  
   nginx:
     image: nginx:alpine
     container_name: nginx
